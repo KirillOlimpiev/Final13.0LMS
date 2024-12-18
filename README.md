@@ -1,4 +1,4 @@
-# Final13.0LMS
+# Final13LMS
 package main
 
 import (
@@ -63,3 +63,17 @@ func main() {
     http.HandleFunc("/api/v1/calculate", CalculateHandler)
     http.ListenAndServe(":8080", nil)
 }
+
+
+Инструкции по запуску
+Сохраните этот код в файл main.go.
+В терминале перейдите в директорию с этим файлом.
+Запустите команду:
+go run main.go
+Ваш веб-сервис запустится на порту 8080 и будет готов принимать POST-запросы на адрес http://localhost:8080/api/v1/calculate.
+
+Пример запроса
+Вы можете протестировать его с помощью curl:
+
+curl -X POST http://localhost:8080/api/v1/calculate -H "Content-Type: application/json" -d '{"expression":"3 + 5"}'
+Этот код представляет собой простой сервер, который проверяет валидность арифметического выражения и возвращает результат.
